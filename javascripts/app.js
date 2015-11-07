@@ -14,10 +14,14 @@ requirejs.config({
   }
 });
 
-require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material"],
-  function($, firebase, handlebars, authenticate, bootstrap, material) {
+require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "getWeather"],
+  function($, firebase, handlebars, authenticate, bootstrap, material, getWeather) {
 
 $(document).ready(function(){
   console.log("hooked up");
+  authenticate.loginUser("mncross@gmail.com", "abc");
+  var cityID = getWeather.getCityID("37027");
+  console.log("city ID", cityID);
+  getWeather.forecast(cityID, 3);
 });
 });
