@@ -14,10 +14,25 @@ requirejs.config({
   }
 });
 
-require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material"],
-  function($, firebase, handlebars, authenticate, bootstrap, material) {
+require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "validate"],
+  function($, firebase, handlebars, authenticate, bootstrap, material, validate) {
 
-$(document).ready(function(){
-  console.log("hooked up");
-});
+	$(document).ready(function(){
+  	console.log("hooked up");
+	
+
+  	validate.byZipCode('34567');
+
+
+
+
+
+
+
+
+
+
+	});
+
+
 });
