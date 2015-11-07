@@ -2,7 +2,7 @@ define(function(require) {
 	var $ = require('jquery');
 	var Firebase = require('firebase');
 
-/*end define statement*/
+	/* end define statement */
 
 	var loginRef = new Firebase('https://local-weather-mk.firebaseIO.com');
 
@@ -39,7 +39,5 @@ define(function(require) {
   			}
 			});
 		}
-
 	};
-
 });

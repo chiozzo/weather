@@ -14,8 +14,8 @@ requirejs.config({
   }
 });
 
-require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "getWeather"],
-  function($, firebase, handlebars, authenticate, bootstrap, material, getWeather) {
+require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "getWeather", "validate"],
+  function($, firebase, handlebars, authenticate, bootstrap, material, getWeather, validate) {
 
 $(document).ready(function(){
   console.log("hooked up");
