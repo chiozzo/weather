@@ -1,5 +1,9 @@
 define(function(require) {
 	var $ = require('jquery');
+	var Firebase = require('firebase');
+
+	/* end define statement */
+
 	var loginRef = new Firebase('https://local-weather-mk.firebaseIO.com');
 	
 
@@ -34,7 +38,7 @@ define(function(require) {
     			console.log("Successfully created user account with uid:", userData.uid);
   			}
 			});		
-		});
+		}
 	
 	};
 
