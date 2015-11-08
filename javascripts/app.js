@@ -22,10 +22,11 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
 
 		authenticate.loginUser('mncross@gmail.com', 'abc');
 
-  	weatherView.retrieveWeatherData()
-  	.then(function(userWeather) {
-  		console.log('userWeather', userWeather);
-  	});
+    getWeather.currentWeather("37027")
+    .then(function(){
+      var currentWeather = getWeather.getPrevWeather();
+      console.log("currentWeather", currentWeather);
+    });
 
 
 	});
