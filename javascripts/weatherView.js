@@ -13,7 +13,9 @@ define(function(require) {
 
 			console.log('prevCurrentWeather', prevCurrentWeather);
 			
-			var newSavedWeather = {
+			var savedCurrentWeather = {
+				cityName: prevCurrentWeather.name,
+				dateTime: prevCurrentWeather.dt,
 				temperature: prevCurrentWeather.main.temp,
 				conditions: prevCurrentWeather.weather[0].description,
 				weatherIcon: prevCurrentWeather.weather[0].icon,
@@ -21,10 +23,10 @@ define(function(require) {
 				windSpeed: prevCurrentWeather.wind.speed
 			};
 
-			console.log('newSavedWeather', newSavedWeather);
+			console.log('savedCurrentWeather', savedCurrentWeather);
 			console.log('firebaseRef.getAuth().uid', firebaseRef.getAuth().uid);
 
-			firebaseRef.child('users').child(firebaseRef.getAuth().uid).child(prevCurrentWeather.dt).set(newSavedWeather);
+			firebaseRef.child('users').child(firebaseRef.getAuth().uid).child(prevCurrentWeather.dt).set(savedCurrentWeather);
 
 		},
 
