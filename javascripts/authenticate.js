@@ -5,7 +5,7 @@ define(function(require) {
 	/* end define statement */
 
 	var loginRef = new Firebase('https://local-weather-mk.firebaseIO.com');
-	
+
 
 	return {
 
@@ -21,7 +21,7 @@ define(function(require) {
 					console.log('Login failed!', error);
 				}
 				else {
-					console.log('Authenticated succesfully with payload!', authData);				
+					console.log('Authenticated succesfully with payload!', authData);
 				}
 			});
 
@@ -37,9 +37,7 @@ define(function(require) {
   			} else {
     			console.log("Successfully created user account with uid:", userData.uid);
   			}
-			});		
+			});
 		}
-	
 	};
-
 });

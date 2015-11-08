@@ -5,7 +5,8 @@ requirejs.config({
     "hbs": "../lib/bower_components/require-handlebars-plugin/hbs",
     "bootstrap": "../lib/bower_components/bootstrap/dist/js/bootstrap.min",
     "firebase": "../lib/bower_components/firebase/firebase",
-    "material": "../lib/bower_components/bootstrap-material-design/dist/js/material.min"
+    "material": "../lib/bower_components/bootstrap-material-design/dist/js/material.min",
+    "q": "../lib/bower_components/q/q"
   },
   shim: {
     "bootstrap": ["jquery"],
@@ -37,6 +38,7 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
 
 
 	});
+
 
 
 });
