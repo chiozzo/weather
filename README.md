@@ -2,3 +2,4 @@
 
 - temp
 - condition
+- wind
