@@ -5,7 +5,8 @@ requirejs.config({
     "hbs": "../lib/bower_components/require-handlebars-plugin/hbs",
     "bootstrap": "../lib/bower_components/bootstrap/dist/js/bootstrap.min",
     "firebase": "../lib/bower_components/firebase/firebase",
-    "material": "../lib/bower_components/bootstrap-material-design/dist/js/material.min"
+    "material": "../lib/bower_components/bootstrap-material-design/dist/js/material.min",
+    "q": "../lib/bower_components/q/q"
   },
   shim: {
     "bootstrap": ["jquery"],
@@ -14,14 +15,12 @@ requirejs.config({
   }
 });
 
-require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "getWeather", "validate"],
-  function($, firebase, handlebars, authenticate, bootstrap, material, getWeather, validate) {
+require(["jquery", "q", "firebase", "hbs", "authenticate", "bootstrap", "material", "getWeather", "validate"],
+  function($, q, firebase, handlebars, authenticate, bootstrap, material, getWeather, validate) {
 
 $(document).ready(function(){
-  console.log("hooked up");
-  authenticate.loginUser("mncross@gmail.com", "abc");
-  var cityID = getWeather.getCityID("37027");
-  console.log("city ID", cityID);
-  getWeather.forecast(cityID, 3);
+
+
+
 });
 });
