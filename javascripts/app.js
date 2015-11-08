@@ -44,14 +44,25 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
 
   	$('#threeDayForecast').on('click', function(e) {
   		e.preventDefault();
-  		getWeather.forecast(currentWeather.id, 3)
-  		.then(function(forecast) {
-  			console.log('3 Day Forecast', forecast);
+  		var zipCode = $('#zipCodeSearchInput').val();
+  		validate.byZipCode(zipCode);
+  		getWeather.currentWeather(zipCode)
+  		.then(function(currentWeather) {
+  			getWeather.forecast(currentWeather.id, 3)
+  			.then(function(forecast) {
+  				for (var i=0; i<forecast.list.length; i++) {
+  					forecast.list[i].dt = new Date(forecast.list[i].dt * 1000);
+  				}
+  				require(['hbs!../templates/forecast'], function(forecastHbs) {
+  					$('#forecastView').html(forecastHbs(forecast));
+  				});
+  			});
   		});
-  	})
+
+
+		});
 
 
 	});
-
 
 });
