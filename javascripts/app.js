@@ -19,7 +19,11 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
   function($, firebase, handlebars, authenticate, bootstrap, material, validate, weatherView, getWeather) {
 
 	$(document).ready(function(){
-		
+
+    var testDate = new Date(1447002000);
+    console.log("testDate", testDate);
+
+
 		authenticate.loginUser('mncross@gmail.com', 'abc');
 
     getWeather.currentWeather("37027")
