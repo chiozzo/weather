@@ -15,30 +15,20 @@ requirejs.config({
   }
 });
 
-require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "validate", "saveForecast"],
-  function($, firebase, handlebars, authenticate, bootstrap, material, validate, saveForecast) {
+require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "validate", "weatherView", "getWeather"],
+  function($, firebase, handlebars, authenticate, bootstrap, material, validate, weatherView, getWeather) {
 
 	$(document).ready(function(){
 
-  	console.log("hooked up");
-		authenticate.loginUser("mncross@gmail.com", "abc");
-
-
-  	validate.byZipCode('34567');
-
-  	weatherView.saveWeatherData();
-
-
-
-
-
-
-
-
+		authenticate.loginUser('mncross@gmail.com', 'abc');
+		
+  	weatherView.retrieveWeatherData()
+  	.then(function(userWeather) {
+  		console.log('userWeather', userWeather);
+  	});		
 
 
 	});
-
 
 
 });

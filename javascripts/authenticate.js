@@ -1,7 +1,7 @@
 define(function(require) {
 	var $ = require('jquery');
 	var Firebase = require('firebase');
-
+	
 	/* end define statement */
 
 	var loginRef = new Firebase('https://local-weather-mk.firebaseIO.com');
@@ -11,6 +11,7 @@ define(function(require) {
 
 		loginUser: function(email, password) {
 
+			
 			var loginForm = {
 				email: email,
 				password: password
@@ -23,6 +24,7 @@ define(function(require) {
 				else {
 					console.log('Authenticated succesfully with payload!', authData);
 				}
+
 			});
 
 		},
