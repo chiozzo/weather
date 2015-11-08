@@ -21,11 +21,11 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
 	$(document).ready(function(){
 
 		authenticate.loginUser('mncross@gmail.com', 'abc');
-		
+
   	weatherView.retrieveWeatherData()
   	.then(function(userWeather) {
   		console.log('userWeather', userWeather);
-  	});		
+  	});
 
 
 	});
