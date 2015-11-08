@@ -3,3 +3,4 @@
 - temp
 - condition
 - wind
+- air pressure
