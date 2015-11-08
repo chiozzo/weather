@@ -2,6 +2,7 @@ define(function(require) {
 	var $ = require('jquery');
 	var Firebase = require('firebase');
 	var q = require('q');
+	var convertDT = require('convertDT')
 
 /* end define statement */
 
@@ -15,7 +16,7 @@ define(function(require) {
 			
 			var savedCurrentWeather = {
 				cityName: prevCurrentWeather.name,
-				dateTime: prevCurrentWeather.dt,
+				date: convertDT.convertUnixTime(prevCurrentWeather.dt),
 				temperature: prevCurrentWeather.main.temp,
 				conditions: prevCurrentWeather.weather[0].description,
 				weatherIcon: prevCurrentWeather.weather[0].icon,
