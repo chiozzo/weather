@@ -15,12 +15,20 @@ requirejs.config({
   }
 });
 
-require(["jquery", "q", "firebase", "hbs", "authenticate", "bootstrap", "material", "getWeather", "validate"],
-  function($, q, firebase, handlebars, authenticate, bootstrap, material, getWeather, validate) {
+require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "validate", "weatherView", "getWeather"],
+  function($, firebase, handlebars, authenticate, bootstrap, material, validate, weatherView, getWeather) {
 
-$(document).ready(function(){
+	$(document).ready(function(){
+
+		authenticate.loginUser('mncross@gmail.com', 'abc');
+		
+  	weatherView.retrieveWeatherData()
+  	.then(function(userWeather) {
+  		console.log('userWeather', userWeather);
+  	});		
 
 
+	});
 
-});
+
 });
