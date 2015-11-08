@@ -19,7 +19,7 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
   function($, firebase, handlebars, authenticate, bootstrap, material, validate, weatherView, getWeather) {
 
 	$(document).ready(function(){
-
+		
 		authenticate.loginUser('mncross@gmail.com', 'abc');
 
     getWeather.currentWeather("37027")
@@ -27,6 +27,25 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
       var currentWeather = getWeather.getPrevWeather();
       console.log("currentWeather", currentWeather);
     });
+
+  	$('#zipCodeSearchButton').on('click', function(e) {
+  		e.preventDefault();
+  		var zipCode = $('#zipCodeSearchInput').val();
+  		console.log('ZIP', zipCode);
+  		validate.byZipCode(zipCode);
+  		getWeather.currentWeather(zipCode)
+  		.then(function(currentWeather) {
+  			console.log('currentWeather', currentWeather);
+  		});
+  	});
+
+  	$('#threeDayForecast').on('click', function(e) {
+  		e.preventDefault();
+  		getWeather.forecast(currentWeather.id, 3)
+  		.then(function(forecast) {
+  			console.log('3 Day Forecast', forecast);
+  		});
+  	})
 
 
 	});
