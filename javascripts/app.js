@@ -6,7 +6,7 @@ requirejs.config({
     "bootstrap": "../lib/bower_components/bootstrap/dist/js/bootstrap.min",
     "firebase": "../lib/bower_components/firebase/firebase",
     "material": "../lib/bower_components/bootstrap-material-design/dist/js/material.min",
-    "q": "../lib/bower_components/q/q"
+    "q": "../lib/bower_components/q/q",
   },
   shim: {
     "bootstrap": ["jquery"],
@@ -35,7 +35,10 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
   		validate.byZipCode(zipCode);
   		getWeather.currentWeather(zipCode)
   		.then(function(currentWeather) {
-  			console.log('currentWeather', currentWeather);
+  			console.log('icon', currentWeather.weather[0].icon);
+  			require(['hbs!../templates/currentWeather'], function(currentWeatherHbs) {
+  				$('#currentWeatherView').html(currentWeatherHbs(currentWeather));
+  			});
   		});
   	});
 
