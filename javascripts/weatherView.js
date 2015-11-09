@@ -23,6 +23,9 @@ define(function(require) {
 
 			firebaseRef.child('users').child(firebaseRef.getAuth().uid).child(prevCurrentWeather.dt).set(savedCurrentWeather);
 		},
+		/*
+		retrieveWeatherData gets the currently logged in user's saved weather data.
+		 */
 		retrieveWeatherData: function() {
 			var deferred = q.defer();
 

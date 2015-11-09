@@ -26,7 +26,7 @@ var prevCurrentWeather = null;
 			return deferred.promise;
 		},
 		/*
-		getCityID submits API call based on zipCode and returns unique ID of city
+		getPrevWeather references the variable that was stored from the last weather search
 		 */
 		getPrevWeather: function() {
 				return prevCurrentWeather;

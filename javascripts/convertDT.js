@@ -1,72 +1,76 @@
 define(function(require) {
 
 	return {
-
+		/*
+		convertUnixTime converts from epoch (given by API) to 'Sun, Nov 8, 2015' format
+		Planning to add suffix to date (e.g. 1st, 2nd, 3rd, ...)
+		 */
 		convertUnixTime: function(dt) {
 
 			var convertedDateTime = new Date(dt * 1000);
+			var convertedDay;
 			switch(convertedDateTime.getDay()) {
 				case 0:
-					var convertedDay = "Sun";
+					convertedDay = "Sun";
 					break;
 				case 1:
-					var convertedDay = "Mon";
+					convertedDay = "Mon";
 					break;
 				case 2:
-					var convertedDay = "Tue";
+					convertedDay = "Tue";
 					break;
 				case 3:
-					var convertedDay = "Wed";
+					convertedDay = "Wed";
 					break;
 				case 4:
-					var convertedDay = "Thu";
+					convertedDay = "Thu";
 					break;
 				case 5:
-					var convertedDay = "Fri";
+					convertedDay = "Fri";
 					break;
 				case 6:
-					var convertedDay = "Sat";
+					convertedDay = "Sat";
 					break;
-			};
-
+			}
+			var convertedMonth;
 			switch(convertedDateTime.getMonth()){
 				case 0:
-						var convertedMonth = "Jan";
+						convertedMonth = "Jan";
 						break;
 				case 1:
-						var convertedMonth = "Feb";
+						convertedMonth = "Feb";
 						break;
 				case 2:
-						var convertedMonth = "Mar";
+						convertedMonth = "Mar";
 						break;
 				case 3:
-						var convertedMonth = "Apr";
+						convertedMonth = "Apr";
 						break;
 				case 4:
-						var convertedMonth = "May";
+						convertedMonth = "May";
 						break;
 				case 5:
-						var convertedMonth = "Jun";
+						convertedMonth = "Jun";
 						break;
 				case 6:
-						var convertedMonth = "Jul";
+						convertedMonth = "Jul";
 						break;
 				case 7:
-						var convertedMonth = "Aug";
+						convertedMonth = "Aug";
 						break;
 				case 8:
-						var convertedMonth = "Sep";
+						convertedMonth = "Sep";
 						break;
 				case 9:
-						var convertedMonth = "Oct";
+						convertedMonth = "Oct";
 						break;
 				case 10:
-						var convertedMonth = "Nov";
+						convertedMonth = "Nov";
 						break;
 				case 11:
-						var convertedMonth = "Dec";
+						convertedMonth = "Dec";
 						break;
-			};
+			}
 
 			var convertedDate = convertedDateTime.getDate();
 			// 1st
