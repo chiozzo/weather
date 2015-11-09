@@ -24,6 +24,8 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
 
   	$('#zipCodeSearchButton').on('click', function(e) {
   		e.preventDefault();
+      $('#forecastView').hide();
+      $('#userSavedWeatherView').hide();
   		var zipCode = $('#zipCodeSearchInput').val();
   		validate.byZipCode(zipCode);
   		getWeather.currentWeather(zipCode)
@@ -31,11 +33,13 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
   			require(['hbs!../templates/currentWeather'], function(currentWeatherHbs) {
   				$('#currentWeatherView').html(currentWeatherHbs(currentWeather));
   			});
+        $('#currentWeatherView').show();
   		});
   	});
 
   	$('#threeDayForecast').on('click', function(e) {
   		e.preventDefault();
+      $('#userSavedWeatherView').hide();
   		$('#currentWeatherView').hide();
   		var zipCode = $('#zipCodeSearchInput').val();
   		validate.byZipCode(zipCode);
@@ -49,48 +53,48 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
   				require(['hbs!../templates/forecast'], function(forecastHbs) {
   					$('#forecastView').html(forecastHbs(forecast));
   				});
-  			});
-  		});
-		});
+          $('#forecastView').show();
+        });
+      });
+    });
 
-  	$('#sevenDayForecast').on('click', function(e) {
-  		e.preventDefault();
-  		$('#currentWeatherView').hide();
-  		var zipCode = $('#zipCodeSearchInput').val();
-  		validate.byZipCode(zipCode);
-  		getWeather.currentWeather(zipCode)
-  		.then(function(currentWeather) {
-  			getWeather.forecast(currentWeather.id, 7)
-  			.then(function(forecast) {
-  				for (var i=0; i<forecast.list.length; i++) {
-  					forecast.list[i].dt = new Date(forecast.list[i].dt * 1000);
-  				}
-  				require(['hbs!../templates/forecast'], function(forecastHbs) {
-  					$('#forecastView').html(forecastHbs(forecast));
-  				});
-  			});
-  		});
-  	});
+    $('#sevenDayForecast').on('click', function(e) {
+      e.preventDefault();
+      $('#userSavedWeatherView').hide();
+      $('#currentWeatherView').hide();
+      var zipCode = $('#zipCodeSearchInput').val();
+      validate.byZipCode(zipCode);
+      getWeather.currentWeather(zipCode)
+      .then(function(currentWeather) {
+        getWeather.forecast(currentWeather.id, 7)
+        .then(function(forecast) {
+          for (var i=0; i<forecast.list.length; i++) {
+            forecast.list[i].dt = new Date(forecast.list[i].dt * 1000);
+          }
+          require(['hbs!../templates/forecast'], function(forecastHbs) {
+            $('#forecastView').html(forecastHbs(forecast));
+          });
+          $('#forecastView').show();
+        });
+      });
+    });
 
-  	$('#currentWeatherView').on('click', '#saveCurrentWeather', function(e) {
-  		e.preventDefault();
-  		weatherView.saveWeatherData(getWeather.getPrevWeather());
-  	});
+    $('#currentWeatherView').on('click', '#saveCurrentWeather', function(e) {
+      e.preventDefault();
+      weatherView.saveWeatherData(getWeather.getPrevWeather());
+    });
 
-		$('#userSavedWeather').on('click', function(e) {
-			e.preventDefault();
-			$('#currentWeatherView').hide();
-			weatherView.retrieveWeatherData()
-			.then(function(userWeather) {
-				console.log('userWeather', userWeather);
-				require(['hbs!../templates/userWeather'], function(userWeatherHbs) {
-					$('#userSavedWeatherView').html(userWeatherHbs({weather: userWeather}));
-				});
+    $('#userSavedWeather').on('click', function(e) {
+      e.preventDefault();
+      $('#forecastView').hide();
+      $('#currentWeatherView').hide();
+      weatherView.retrieveWeatherData()
+      .then(function(userWeather) {
+        require(['hbs!../templates/userWeather'], function(userWeatherHbs) {
+          $('#userSavedWeatherView').html(userWeatherHbs({weather: userWeather}));
+        });
+        $('#userSavedWeatherView').show();
 			});
 		});
-
-
-
 	});
-
 });

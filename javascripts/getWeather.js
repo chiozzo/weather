@@ -8,7 +8,6 @@ var openweathermap = "http://api.openweathermap.org/data/2.5/";
 var appid = "38bbec9b30b2833d4a08f8255a75ab9f";
 var prevCurrentWeather = null;
 
-
 	return {
 		/*
 		currentWeather submits API call based on given zipCode and returns object of current weather
@@ -21,6 +20,8 @@ var prevCurrentWeather = null;
 			.done(function(currentWeather) {
 				prevCurrentWeather = currentWeather;
 				deferred.resolve(currentWeather);
+			}).fail(function(error){
+				console.log("error", error);
 			});
 			return deferred.promise;
 		},
@@ -39,8 +40,9 @@ var prevCurrentWeather = null;
 				url: openweathermap + "forecast/daily?id=" + cityID + "&cnt=" + days + "&units=imperial&appid=" + appid
 			})
 			.done(function(forecast){
-				forecast.dt = convertDT.convertUnixTime(forecast.dt);
-				console.log('forecast.dt', forecast.dt);
+				forecast.list.forEach(function(currentValue, index, array){
+					currentValue.day = convertDT.convertUnixTime(currentValue.dt);
+				});
 				deferred.resolve(forecast);
 			});
 			return deferred.promise;
