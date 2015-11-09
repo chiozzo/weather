@@ -4,27 +4,31 @@
 	<meta charset="UTF-8">
 	<title>Local Weather</title>
 	<link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./lib/bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css">
 	<link rel="stylesheet" href="styles/css/main.css">
 </head>
 <body>
-
-
-<div class="row" id="navigation" hidden>
-	<div class="navbar-form navbar-left" role="search">
-	  <div class="form-group">
-	    <input type="text" class="form-control" placeholder="Enter your zipcode" id="zipCodeSearchInput">
-	  </div>
-	  <button type="submit" class="btn btn-default" id="zipCodeSearchButton">Current Weather</button>
-		<button type="submit" class="btn btn-default" id="threeDayForecast">3 day forecast</button>
-		<button type="submit" class="btn btn-default" id="sevenDayForecast">7 day forecast</button>
-		<button type="submit" class="btn btn-default" id="userSavedWeather">My Saved Weather</button>
+	<div class="jumbotron">
+    <h1>Rainy Days and Mondays</h1>
+    <h3>A Weather App</h3>
 	</div>
-</div>
-<div class="row">
-  <div class="col-md-offset-4 col-md-4" id="currentWeatherView"></div>
-  <div id="forecastView"></div>
-  <div id="userSavedWeatherView"></div>
-</div>
+	
+	<div class="row" id="navigation" hidden>
+		<div class="navbar-form navbar-left" role="search">
+		  <div class="form-group">
+		    <input type="text" class="form-control" placeholder="Enter your zipcode" id="zipCodeSearchInput">
+		  </div>
+		  <button type="submit" class="btn btn-material-red-500" id="zipCodeSearchButton">Current Weather</button>
+			<button type="submit" class="btn btn-material-indigo-A700" id="threeDayForecast">3 day forecast</button>
+			<button type="submit" class="btn btn-material-yellow-500" id="sevenDayForecast">7 day forecast</button>
+			<button type="submit" class="btn btn-material-light-green-A700" id="userSavedWeather">My Saved Weather</button>
+		</div>
+	</div>
+	<div class="row">
+	  <div class="col-md-offset-4 col-md-4" id="currentWeatherView"></div>
+	  <div id="forecastView"></div>
+	  <div id="userSavedWeatherView"></div>
+	</div>
 
 <script data-main="javascripts/app" src="lib/bower_components/requirejs/require.js"></script>
 </body>
