@@ -103,7 +103,7 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
 				console.log('userWeather', userWeather);
 				require(['hbs!../templates/userWeather'], function(userWeatherHbs) {
 					$('#userSavedWeatherView').html(userWeatherHbs({weather: userWeather}));
-				})
+				});
 			});
 		});
 
