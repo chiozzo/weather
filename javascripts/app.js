@@ -47,9 +47,6 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
   		.then(function(currentWeather) {
   			getWeather.forecast(currentWeather.id, 3)
   			.then(function(forecast) {
-  				for (var i=0; i<forecast.list.length; i++) {
-  					forecast.list[i].dt = new Date(forecast.list[i].dt * 1000);
-  				}
   				require(['hbs!../templates/forecast'], function(forecastHbs) {
   					$('#forecastView').html(forecastHbs(forecast));
   				});
@@ -68,9 +65,6 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
       .then(function(currentWeather) {
         getWeather.forecast(currentWeather.id, 7)
         .then(function(forecast) {
-          for (var i=0; i<forecast.list.length; i++) {
-            forecast.list[i].dt = new Date(forecast.list[i].dt * 1000);
-          }
           require(['hbs!../templates/forecast'], function(forecastHbs) {
             $('#forecastView').html(forecastHbs(forecast));
           });
