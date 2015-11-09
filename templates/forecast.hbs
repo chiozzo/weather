@@ -1,11 +1,13 @@
 {{#each list}}
-<div class="forecastDiv col-md-4">
-	<h3>Your forecast for {{@root.city.name}} on {{day}}</h3>
-	<p>High temperature for this day is {{temp.max}}&deg;F</p>
-	<p>Low temperature for this day is {{temp.min}}&deg;F</p>
-	<div>
-		<p>{{weather.[0].description}}</p>
-		<img src="http://openweathermap.org/img/w/{{weather.[0].icon}}.png" alt={{weather.[0].main}}>
+<div class="col-md-4">
+	<div class="forecastDiv">
+		<h3>Your forecast for {{@root.city.name}} on {{day}}</h3>
+		<p>High temperature for this day is {{temp.max}}&deg;F</p>
+		<p>Low temperature for this day is {{temp.min}}&deg;F</p>
+		<div>
+			<p>{{weather.[0].description}}</p>
+			<img src="http://openweathermap.org/img/w/{{weather.[0].icon}}.png" alt={{weather.[0].main}}>
+		</div>
 	</div>
 </div>
 {{/each}}

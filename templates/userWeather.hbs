@@ -1,10 +1,12 @@
 {{#each weather}}
-<div class="col-md-4 savedWeatherDiv">
-	<h3>Your weather for {{cityName}} on {{date}}</h3>
-	<p>Your temperature on this day was {{temperature}}&deg;F</p>
-	<div>
-		<p>{{conditions}}</p>
-		<img src="http://openweathermap.org/img/w/{{weatherIcon}}.png" alt={{conditions}}>
+<div class="col-md-4">
+	<div class="savedWeatherDiv">
+		<h3>Your weather for {{cityName}} on {{date}}</h3>
+		<p>Your temperature on this day was {{temperature}}&deg;F</p>
+		<div>
+			<p>{{conditions}}</p>
+			<img src="http://openweathermap.org/img/w/{{weatherIcon}}.png" alt={{conditions}}>
+		</div>
 	</div>
 </div>
 {{/each}}
