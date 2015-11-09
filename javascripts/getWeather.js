@@ -1,5 +1,6 @@
 define(function(require) {
 	var q = require('q');
+	var convertDT = require('convertDT');
 
 // base API url
 var openweathermap = "http://api.openweathermap.org/data/2.5/";
@@ -38,7 +39,8 @@ var prevCurrentWeather = null;
 				url: openweathermap + "forecast/daily?id=" + cityID + "&cnt=" + days + "&units=imperial&appid=" + appid
 			})
 			.done(function(forecast){
-				console.log("forecast", forecast);
+				forecast.dt = convertDT.convertUnixTime(forecast.dt);
+				console.log('forecast.dt', forecast.dt);
 				deferred.resolve(forecast);
 			});
 			return deferred.promise;
