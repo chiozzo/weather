@@ -4,6 +4,9 @@
 .jumbotron {
   font-weight: 700; }
 
+#panelContainer {
+  height: 20em; }
+
 #currentWeatherView {
   border: 3px black solid;
   margin-bottom: 20px; }
