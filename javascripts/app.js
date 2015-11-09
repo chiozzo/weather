@@ -15,37 +15,19 @@ requirejs.config({
   }
 });
 
-require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "validate", "weatherView", "getWeather"],
-  function($, firebase, handlebars, authenticate, bootstrap, material, validate, weatherView, getWeather) {
+require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "validate", "weatherView", "getWeather", "convertDT"],
+  function($, firebase, handlebars, authenticate, bootstrap, material, validate, weatherView, getWeather, convertDT) {
 
 	$(document).ready(function(){
 
-    var testDate = new Date(1447020589 * 1000);
-    console.log(testDate);
-    var testMonth = testDate.getMonth() + 1;
-    var testDay =testDate.getDate();
-    var testYear = testDate.getFullYear();
-    console.log("testYear", testYear);
-    testDate = testMonth + " " + testDay + " " + testYear;
-    console.log("testDate", testDate);
-
-
 		authenticate.loginUser('mncross@gmail.com', 'abc');
-
-    getWeather.currentWeather("37027")
-    .then(function(){
-      var currentWeather = getWeather.getPrevWeather();
-      console.log("currentWeather", currentWeather);
-    });
 
   	$('#zipCodeSearchButton').on('click', function(e) {
   		e.preventDefault();
   		var zipCode = $('#zipCodeSearchInput').val();
-  		console.log('ZIP', zipCode);
   		validate.byZipCode(zipCode);
   		getWeather.currentWeather(zipCode)
   		.then(function(currentWeather) {
-  			console.log('icon', currentWeather.weather[0].icon);
   			require(['hbs!../templates/currentWeather'], function(currentWeatherHbs) {
   				$('#currentWeatherView').html(currentWeatherHbs(currentWeather));
   			});

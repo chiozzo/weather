@@ -9,16 +9,16 @@
 <body>
 
 
-<div class="row">
+<div class="row" id="navigation" hidden>
 	<div class="navbar-form navbar-left" role="search">
 	  <div class="form-group">
 	    <input type="text" class="form-control" placeholder="Enter your zipcode" id="zipCodeSearchInput">
 	  </div>
-	  <button type="submit" class="btn btn-default" id="zipCodeSearchButton">Submit</button>
+	  <button type="submit" class="btn btn-default" id="zipCodeSearchButton">Current Weather</button>
+		<button type="submit" class="btn btn-default" id="threeDayForecast">3 day forecast</button>
+		<button type="submit" class="btn btn-default" id="sevenDayForecast">7 day forecast</button>
+		<button type="submit" class="btn btn-default" id="userSavedWeather">My Saved Weather</button>
 	</div>
-	<button type="submit" class="btn btn-default" id="threeDayForecast">3 day forecast</button>
-	<button type="submit" class="btn btn-default" id="sevenDayForecast">7 day forecast</button>
-	<button type="submit" class="btn btn-default" id="userSavedWeather">My Saved Weather</button>
 </div>
 <div class="row">
   <div class="col-md-offset-4 col-md-4" id="currentWeatherView"></div>
