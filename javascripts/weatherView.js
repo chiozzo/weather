@@ -11,9 +11,6 @@ define(function(require) {
 	return {
 	//This method saves forecast in present view to user's profile in Firebase
 		saveWeatherData: function(prevCurrentWeather) {
-
-			console.log('prevCurrentWeather', prevCurrentWeather);
-
 			var savedCurrentWeather = {
 				cityName: prevCurrentWeather.name,
 				date: convertDT.convertUnixTime(prevCurrentWeather.dt),
@@ -24,16 +21,9 @@ define(function(require) {
 				windSpeed: prevCurrentWeather.wind.speed
 			};
 
-			console.log('savedCurrentWeather', savedCurrentWeather);
-			console.log('firebaseRef.getAuth().uid', firebaseRef.getAuth().uid);
-
 			firebaseRef.child('users').child(firebaseRef.getAuth().uid).child(prevCurrentWeather.dt).set(savedCurrentWeather);
-
 		},
-
 		retrieveWeatherData: function() {
-			// console.log('https://local-weather-mk.firebaseio.com/users/' + firebaseRef.getAuth().uid + '/.json');
-
 			var deferred = q.defer();
 
 			$.ajax('https://local-weather-mk.firebaseio.com/users/' + firebaseRef.getAuth().uid + '/.json')
@@ -43,11 +33,7 @@ define(function(require) {
 					deferred.reject();
 					console.log('error', error);
 			});
-
-
 			return deferred.promise;
 		}
-
 	};
-
 });
