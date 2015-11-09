@@ -82,9 +82,6 @@ define(function(require) {
 			var convertedYear = convertedDateTime.getFullYear();
 
 			return convertedDay + ", " + convertedMonth + " " + convertedDate + ", " + convertedYear;
-
 		}
-
 	};
-
 });
