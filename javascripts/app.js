@@ -20,7 +20,13 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
 
 	$(document).ready(function(){
 
-    var testDate = new Date(1447002000);
+    var testDate = new Date(1447020589 * 1000);
+    console.log(testDate);
+    var testMonth = testDate.getMonth() + 1;
+    var testDay =testDate.getDate();
+    var testYear = testDate.getFullYear();
+    console.log("testYear", testYear);
+    testDate = testMonth + " " + testDay + " " + testYear;
     console.log("testDate", testDate);
 
 
