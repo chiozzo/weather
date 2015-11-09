@@ -8,6 +8,10 @@
 	font-weight: 700;
 }
 
+#panelContainer {
+	height: 20em;
+}
+
 //Handlebars styles
 #currentWeatherView {
 	border: 3px black solid;
@@ -35,7 +39,7 @@
 .gradient {
   background-image:
     linear-gradient(
-      to left, 
+      to left,
       gray, #f06d09
     );
 }

@@ -23,29 +23,32 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
 
 	$.material.init();
 
-	var panelContainer = $('#panelContainer').scotchPanel({
-    containerSelector: 'body', // Make this appear on the entire screen
+	var panelContainer = $('#registerForm').scotchPanel({
+    containerSelector: '#panelContainer', // Make this appear on the entire screen
     direction: 'left', // Make it toggle in from the left
     duration: 900, // Speed in ms how fast you want it to be
     transition: 'ease', // CSS3 transition type: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(P1x,P1y,P2x,P2y)
-    clickSelector: '.toggle-panel', // Enables toggling when clicking elements of this class
+    // clickSelector: '.toggle-panel', // Enables toggling when clicking elements of this class
     distanceX: '100%', // Size for the toggle
     enableEscapeKey: true // Clicking Esc will close the panel
 	});
 
-	
+  $('#currentWeatherView').hide();
 
-	$('#currentWeatherView').hide();
+  $(document).ready(function(){
 
-	$(document).ready(function(){
-		
-		panelContainer.open();
-		panelContainer.close();
-		
-		authenticate.loginUser('mncross@gmail.com', 'abc');
+    // panelContainer.open();
+    // panelContainer.close();
 
-  	$('#zipCodeSearchButton').on('click', function(e) {
-  		e.preventDefault();
+    $(document).on('click', '#registerFormButton', function() {
+      $('#registerForm').show();
+      panelContainer.open();
+    });
+
+    // authenticate.loginUser('mncross@gmail.com', 'abc');
+
+    $('#zipCodeSearchButton').on('click', function(e) {
+      e.preventDefault();
       $('#forecastView').hide();
       $('#userSavedWeatherView').hide();
   		var zipCode = $('#zipCodeSearchInput').val();
