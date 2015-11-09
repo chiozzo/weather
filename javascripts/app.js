@@ -21,8 +21,9 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
 
 	$.material.init();
 	
+	$('#currentWeatherView').hide();
 	$(document).ready(function(){
-
+		
 		authenticate.loginUser('mncross@gmail.com', 'abc');
 
   	$('#zipCodeSearchButton').on('click', function(e) {
