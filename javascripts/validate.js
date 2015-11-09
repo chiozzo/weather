@@ -10,9 +10,6 @@ define(function(require) {
 			} else {
 				alert('Not a valid Zip Code! Please enter a 5-digit Zip Code.');
 			}
-
 		}
-
 	};
-
 });

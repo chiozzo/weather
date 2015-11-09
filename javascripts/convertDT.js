@@ -1,13 +1,17 @@
 define(function(require) {
 
 	return {
-
+		/*
+		convertUnixTime converts from epoch (given by API) to 'Sun, Nov 8, 2015' format
+		Planning to add suffix to date (e.g. 1st, 2nd, 3rd, ...)
+		 */
 		convertUnixTime: function(dt) {
 
 			var convertedDateTime = new Date(dt * 1000);
+			var convertedDay;
 			switch(convertedDateTime.getDay()) {
 				case 0:
-					var convertedDay = "Sun";
+					convertedDay = "Sun";
 					break;
 				case 1:
 					convertedDay = "Mon";
@@ -28,10 +32,10 @@ define(function(require) {
 					convertedDay = "Sat";
 					break;
 			}
-
+			var convertedMonth;
 			switch(convertedDateTime.getMonth()){
 				case 0:
-						var convertedMonth = "Jan";
+						convertedMonth = "Jan";
 						break;
 				case 1:
 						convertedMonth = "Feb";
@@ -78,9 +82,6 @@ define(function(require) {
 			var convertedYear = convertedDateTime.getFullYear();
 
 			return convertedDay + ", " + convertedMonth + " " + convertedDate + ", " + convertedYear;
-
 		}
-
 	};
-
 });

@@ -35,15 +35,14 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
 
 	
 
-	$('#currentWeatherView').hide();
-
 	$(document).ready(function(){
-		
-		panelContainer.open();
-		panelContainer.close();
-		
-		authenticate.loginUser('mncross@gmail.com', 'abc');
+    /*
+    AUTO-LOGIN DURING BUILDING
+     */
 
+    /*
+    click event to display "Current Weather" for requested zip code
+     */
   	$('#zipCodeSearchButton').on('click', function(e) {
   		e.preventDefault();
       $('#forecastView').hide();
@@ -59,6 +58,9 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
   		});
   	});
 
+    /*
+    click event to display "3 day forecast"
+     */
   	$('#threeDayForecast').on('click', function(e) {
   		e.preventDefault();
       $('#userSavedWeatherView').hide();
@@ -77,6 +79,9 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
       });
     });
 
+    /*
+    click event to display "7 day forecast"
+     */
     $('#sevenDayForecast').on('click', function(e) {
       e.preventDefault();
       $('#userSavedWeatherView').hide();
@@ -95,11 +100,17 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
       });
     });
 
+    /*
+    click event to "Save this weather to your profile" in Firebase
+     */
     $('#currentWeatherView').on('click', '#saveCurrentWeather', function(e) {
       e.preventDefault();
       weatherView.saveWeatherData(getWeather.getPrevWeather());
     });
 
+    /*
+    click event to display "My Saved Weather" from Firebase for currently logged in user.
+     */
     $('#userSavedWeather').on('click', function(e) {
       e.preventDefault();
       $('#forecastView').hide();
