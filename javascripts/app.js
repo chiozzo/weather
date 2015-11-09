@@ -7,6 +7,7 @@ requirejs.config({
     "firebase": "../lib/bower_components/firebase/firebase",
     "material": "../lib/bower_components/bootstrap-material-design/dist/js/material.min",
     "q": "../lib/bower_components/q/q",
+    "bootstrap-material-design": "../lib/bower_components/bootstrap-material-design/dist/js/material.min"
   },
   shim: {
     "bootstrap": ["jquery"],
@@ -18,6 +19,8 @@ requirejs.config({
 require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "validate", "weatherView", "getWeather", "convertDT"],
   function($, firebase, handlebars, authenticate, bootstrap, material, validate, weatherView, getWeather, convertDT) {
 
+	$.material.init();
+	
 	$(document).ready(function(){
 
 		authenticate.loginUser('mncross@gmail.com', 'abc');
