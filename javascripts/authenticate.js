@@ -6,9 +6,10 @@ define(function(require) {
 
 	var loginRef = new Firebase('https://local-weather-mk.firebaseIO.com');
 
-
 	return {
-
+		/*
+		loginUser uses Firebase native authentication
+		 */
 		loginUser: function(email, password) {
 
 			var loginForm = {
@@ -27,9 +28,10 @@ define(function(require) {
 				}
 
 			});
-
 		},
-
+		/*
+		registerUser uses Firebase native authentication
+		 */
 		registerUser: function() {
 			ref.createUser({
   				email    : $('#email').val(),

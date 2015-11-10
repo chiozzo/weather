@@ -4,11 +4,23 @@
 	font-weight: 500;
 }
 
+
+//Body styles
 .jumbotron {
 	font-weight: 700;
 }
 
+.gradient {
+  background-image:
+    linear-gradient(
+      to left,
+      gray, #f06d09
+    );
+}
+
 #panelContainer {
+	margin-top: 20px;
+	padding-top: 80px;
 	height: 20em;
 }
 
@@ -36,16 +48,16 @@
 	padding-right: 20px;
 }
 
-.gradient {
-  background-image:
-    linear-gradient(
-      to left,
-      gray, #f06d09
-    );
+#loginButton {
+	margin-top: 20px;
 }
 
-.form-group {
-	padding-left: 10px;
+#loginForm {
+	border: 3px solid black;
+}
+
+#registerFormButton {
+	margin-top: 20px;
 }
 
 .form-control {
