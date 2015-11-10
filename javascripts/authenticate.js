@@ -13,8 +13,8 @@ define(function(require) {
 		loginUser: function(email, password) {
 
 			var loginForm = {
-				email: email,
-				password: password
+				email: $('#loginEmail').val(),
+				password: $('#loginPassword').val()
 			};
 
 			loginRef.authWithPassword(loginForm, function(error, authData) {
@@ -23,6 +23,7 @@ define(function(require) {
 				}
 				else {
 					$('#navigation').show();
+					$('#panelContainer').hide();
 					// console.log('Authenticated succesfully with payload!', authData);
 				}
 

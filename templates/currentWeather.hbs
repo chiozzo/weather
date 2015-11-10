@@ -1,8 +1,10 @@
-<h3>Current Weather for {{name}}</h3>
-<p>Current Temperature is {{main.temp}}&deg;F</p>
-<div>
-	<p>{{weather.[0].description}}</p>
-	<img src="http://openweathermap.org/img/w/{{weather.[0].icon}}.png" alt={{weather.[0].main}}>
+<div id="currentWeatherHbs">
+	<h3>Current Weather for {{name}}</h3>
+	<p>Current Temperature is {{main.temp}}&deg;F</p>
+	<div>
+		<p>{{weather.[0].description}}</p>
+		<img src="http://openweathermap.org/img/w/{{weather.[0].icon}}.png" alt={{weather.[0].main}}>
+	</div>
+	<p>Current Wind Speed: {{wind.speed}}mph</p>
+	<i class="mdi-action-note-add"></i><button id="saveCurrentWeather" class="btn btn-material-blue-900">Save to profile</button>
 </div>
-<p>Current Wind Speed: {{wind.speed}}mph</p>
-<i class="mdi-action-perm-media"></i><button id="saveCurrentWeather" class="btn btn-material-blue-900">Save to profile</button>

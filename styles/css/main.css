@@ -1,8 +1,50 @@
-.form-group {
-  padding-left: 10px; }
+* {
+  font-weight: 500; }
+
+.jumbotron {
+  font-weight: 700; }
+
+.gradient {
+  background-image: linear-gradient(to left, gray, #f06d09); }
+
+#panelContainer {
+  margin-top: 20px;
+  padding-top: 80px;
+  height: 20em; }
+
+#currentWeatherView {
+  border: 3px black solid;
+  margin-bottom: 20px; }
+
+.savedWeatherDiv {
+  border: 3px black solid;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.forecastDiv {
+  border: 3px black solid;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px; }
+
+#loginButton {
+  margin-top: 20px; }
+
+#loginForm {
+  border: 3px solid black; }
+
+#registerFormButton {
+  margin-top: 20px; }
 
 .form-control {
-  border: 1px black solid; }
+  color: black;
+  border: 1px black solid;
+  padding-left: 6px; }
 
 html {
   background: url("http://p1.pichost.me/i/63/1874114.jpg") no-repeat center center fixed;
