@@ -1,51 +1,46 @@
-* {
-  font-weight: 500; }
+/*
+Error: Invalid CSS after "	padding": expected "{", was "}"
+        on line 58 of ../styles/sass/main.scss
 
-.jumbotron {
-  font-weight: 700; }
+53: }
+54: 
+55: #loginForm {
+56: 	border: 3px solid black;
+57: 	padding
+58: }
+59: 
+60: #registerFormButton {
+61: 	margin-top: 20px;
+62: }
+63: 
 
-#panelContainer {
-  height: 20em; }
-
-#currentWeatherView {
-  border: 3px black solid;
-  margin-bottom: 20px; }
-
-.savedWeatherDiv {
-  border: 3px black solid;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-bottom: 15px;
-  padding-left: 20px;
-  padding-right: 20px; }
-
-.forecastDiv {
-  border: 3px black solid;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-bottom: 15px;
-  padding-left: 20px;
-  padding-right: 20px; }
-
-.gradient {
-  background-image: linear-gradient(to left, gray, #f06d09); }
-
-.form-group {
-  padding-left: 10px; }
-
-.form-control {
-  color: black;
-  border: 1px black solid;
-  padding-left: 6px; }
-
-html {
-  background: url("http://p1.pichost.me/i/63/1874114.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-
-.mdi-action-perm-media {
-  padding-right: 4px; }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+../styles/sass/main.scss:58
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:1163:in `expected'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:1097:in `expected'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:1092:in `tok!'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:637:in `block'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:632:in `ruleset'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:656:in `block_child'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:117:in `stylesheet'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:42:in `parse'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:403:in `_to_tree'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:412:in `run'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/base.rb:52:in `parse'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/base.rb:19:in `parse!'
+/usr/local/lib/ruby/gems/1.9.1/gems/sass-3.4.19/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:19:in `load'
+/usr/local/bin/sass:19:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"	padding\": expected \"{\", was \"}\"\A         on line 58 of ../styles/sass/main.scss\A \A 53: }\A 54: \A 55: #loginForm {\A 56: 	border: 3px solid black;\A 57: 	padding\A 58: }\A 59: \A 60: #registerFormButton {\A 61: 	margin-top: 20px;\A 62: }\A 63: "; }
