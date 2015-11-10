@@ -30,20 +30,19 @@
 	  <div class="col-md-offset-4 col-md-4" id="currentWeatherView"></div>
 	  <div id="forecastView"></div>
 	  <div id="userSavedWeatherView"></div>
-		<div id="panelContainer" class="col-md-offset-4 col-md-4">
-		  <div id="registerForm" hidden>
-		    <input type="text" class="form-control floating-label" placeholder="Email" id="regEmail">
-		    <input type="text" class="form-control floating-label" placeholder="Password" id="regPassword">
-		    <input type="text" class="form-control" placeholder="Confirm Password" id="passwordConfirm">
-		    <button>Register</button>
-		  </div>
-		  <div id="loginForm">
-		    <input type="text" class="form-control floating-label" placeholder="Email" id="loginEmail">
-		    <input type="text" class="form-control floating-label" placeholder="Password" id="loginPassword">
-		    <button>Login</button>
-		    <button class="toggle-panel" id="registerFormButton">Sign Up</button>
-		  </div>
-		</div>
+			<div id="panelContainer" class="col-md-offset-4 col-md-4">
+				  <div id="registerForm" hidden>
+				    <input type="text" class="form-control floating-label" placeholder="Email" id="regEmail">
+				    <input type="text" class="form-control floating-label" placeholder="Password" id="regPassword">
+				    <button class="btn btn-default btn-black" id="registerUserButton">Register</button>
+				  </div>
+				  <div id="loginForm">
+				    <input type="text" class="form-control floating-label" placeholder="Email" id="loginEmail">
+				    <input type="text" class="form-control floating-label" placeholder="Password" id="loginPassword">
+				    <button class="btn btn-default btn-black" id="loginButton">Login</button>
+				    <button class="btn btn-default btn-black" id="registerFormButton">Sign Up</button>
+				  </div>
+			</div>
 	</div>
 
 <script data-main="javascripts/app" src="lib/bower_components/requirejs/require.js"></script>

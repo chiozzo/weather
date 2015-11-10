@@ -45,6 +45,15 @@ require(["jquery", "firebase", "hbs", "authenticate", "bootstrap", "material", "
       panelContainer.open();
     });
 
+    $(document).on('click', '#registerUserButton', function() {
+      authenticate.registerUser();
+      panelContainer.close();
+    });
+
+    $(document).on('click', '#loginButton', function() {
+      authenticate.loginUser();
+    });
+
     // authenticate.loginUser('mncross@gmail.com', 'abc');
 
     $('#zipCodeSearchButton').on('click', function(e) {
