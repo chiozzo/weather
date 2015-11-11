@@ -4,7 +4,7 @@ define(function(require) {
 
 	/* end define statement */
 
-	var loginRef = new Firebase('https://local-weather-mk.firebaseIO.com');
+	var firebaseRef = new Firebase('https://local-weather-mk.firebaseIO.com');
 
 	return {
 		/*
@@ -17,7 +17,7 @@ define(function(require) {
 				password: $('#loginPassword').val()
 			};
 
-			loginRef.authWithPassword(loginForm, function(error, authData) {
+			firebaseRef.authWithPassword(loginForm, function(error, authData) {
 				if (error) {
 					console.log('Login failed!', error);
 				}
@@ -33,14 +33,15 @@ define(function(require) {
 		registerUser uses Firebase native authentication
 		 */
 		registerUser: function() {
-			ref.createUser({
-  				email    : $('#email').val(),
-  				password : $('#password').val()
+			var email = $('#regEmail').val();
+			firebaseRef.createUser({
+  				email    : email,
+  				password : $('#regPassword').val()
 				}, function(error, userData) {
   				if (error) {
     				console.log("Error creating user:", error);
   			} else {
-    			console.log("Successfully created user account with uid:", userData.uid);
+    			alert(email + " has succesfully registered. Please login with your new email/password.");
   			}
 			});
 		}
